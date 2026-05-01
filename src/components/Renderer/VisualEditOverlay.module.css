@@ -1,0 +1,53 @@
+/* VisualEditOverlay.module.css
+ *
+ * The overlay div sits on top of the page canvas via absolute positioning
+ * configured in PageCanvas / SvgRenderer. It is invisible by default.
+ */
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	pointer-events: none; /* zones opt-in individually */
+	user-select: none;
+	overflow: hidden;
+}
+
+/* Each editable text zone */
+.zone {
+	position: absolute;
+	display: inline-block;
+	pointer-events: auto;
+	cursor: text;
+	white-space: pre-wrap;
+
+	/* Completely invisible when not focused — we don't want to mask the render */
+	background: transparent;
+	color: transparent;
+	caret-color: #6bb5f8; /* matches c-blue from the theme */
+	border: none;
+	outline: none;
+	border-radius: 2px;
+
+	/* Subtle "hover" hint */
+	transition: background 0.15s ease;
+}
+
+.zone:hover {
+	background: rgba(107, 181, 248, 0.08);
+	color: transparent;
+}
+
+.zone:focus {
+	background: rgba(107, 181, 248, 0.12);
+	color: inherit; /* show the actual text while editing */
+	caret-color: #6bb5f8;
+	outline: 1px solid rgba(107, 181, 248, 0.4);
+	outline-offset: 1px;
+}
+
+/* Active (focused) state — more prominent */
+.zoneActive {
+	color: inherit;
+	background: rgba(107, 181, 248, 0.12);
+}

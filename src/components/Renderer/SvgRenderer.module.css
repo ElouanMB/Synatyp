@@ -1,0 +1,81 @@
+.pageContainer {
+	background: white;
+	margin: 20px auto;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: var(--raw-width);
+	max-width: 100%;
+	aspect-ratio: var(--raw-width) / var(--raw-height);
+	height: auto;
+}
+
+.svgWrapper {
+	width: 100%;
+	height: auto;
+	position: relative;
+}
+
+.svgWrapper svg {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.pageLabel {
+	position: absolute;
+	bottom: -25px;
+	right: 0;
+	color: var(--text-secondary);
+	font-size: 10px;
+	text-transform: uppercase;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	cursor: text;
+	z-index: 100;
+	pointer-events: all;
+	background: transparent;
+}
+
+.svgCursor {
+	fill: black;
+	animation: cursor-blink 0.8s step-end infinite;
+	pointer-events: none;
+}
+
+@keyframes cursor-blink {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+}
+
+.pageCanvas {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.loading {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #f0f0f0;
+	color: #666;
+	font-size: 14px;
+}

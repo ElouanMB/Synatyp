@@ -1,0 +1,718 @@
+.container {
+	height: 100%;
+	background-color: #252526;
+	border-right: 1px solid #333333;
+	width: 260px;
+}
+
+.sidebar {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	user-select: none;
+	overflow: hidden;
+	background-color: #221f22;
+	border-right: 1px solid #333333;
+	font-family:
+		-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+		sans-serif;
+	position: relative;
+}
+
+.sidebarCollapsed {
+	width: 48px;
+	height: 100%;
+	background-color: #333333;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 10px;
+	cursor: pointer;
+	color: #858585;
+}
+
+.sidebarCollapsed:hover {
+	color: #ffffff;
+}
+
+.sidebarHeader {
+	display: flex;
+	flex-direction: column;
+	padding: 8px 16px;
+	font-size: 11px;
+	color: #bbbbbb;
+	background-color: #252526;
+}
+
+.headerMain {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: 25px;
+}
+
+.headerMain h2 {
+	font-size: 11px;
+	margin: 0;
+	font-weight: 400;
+	letter-spacing: 0.5px;
+}
+
+.tabActions {
+	display: flex;
+	gap: 8px;
+	margin-top: 8px;
+}
+
+.tabBtn {
+	background: none;
+	border: none;
+	color: #858585;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	padding: 2px 4px;
+	font-size: 11px;
+	border-radius: 3px;
+}
+
+.tabBtn:hover,
+.activeTab {
+	color: #ffffff;
+	background-color: #37373d;
+}
+
+.sidebarContent {
+	flex: 1;
+	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.sectionHeader {
+	height: 22px;
+	background-color: #383838;
+	display: flex;
+	align-items: center;
+	padding: 0 4px;
+	font-size: 11px;
+	color: #ffffff;
+	font-weight: 700;
+	cursor: pointer;
+	gap: 2px;
+	text-transform: uppercase;
+}
+
+.projectTitle,
+.sectionTitle {
+	flex: 1;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.headerActions {
+	display: flex;
+	gap: 2px;
+}
+
+.headerActions button,
+.actionBtn {
+	background: none;
+	border: none;
+	padding: 0;
+	color: #cccccc;
+	cursor: pointer;
+	width: 24px;
+	height: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0.8;
+	border-radius: 4px;
+	transition: all 0.2s;
+}
+
+.headerActions button:hover,
+.actionBtn:hover {
+	opacity: 1;
+	background-color: #454545;
+	color: #ffffff;
+}
+
+.searchView {
+	display: flex;
+	flex-direction: column;
+}
+
+.explorerView {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.searchContainer {
+	padding: 10px;
+}
+
+.vscodeInput {
+	width: 100%;
+	background-color: #3c3c3c;
+	border: 1px solid #3c3c3c;
+	color: #cccccc;
+	padding: 4px 8px;
+	font-size: 12px;
+	border-radius: 2px;
+	outline: none;
+}
+
+.vscodeInput:focus {
+	border-color: #b86bf8;
+}
+
+.treeView,
+.vscodeList {
+	flex: 1;
+	overflow-y: auto;
+}
+
+.treeItem,
+.projectItem {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	padding: 0;
+	background: none;
+	border: none;
+	color: #cccccc;
+	font-size: 13px;
+	text-align: left;
+	white-space: nowrap;
+	min-height: 22px;
+	cursor: pointer;
+}
+
+.treeItem[draggable="true"] {
+	cursor: grab;
+}
+
+.treeItem[draggable="true"]:active {
+	cursor: grabbing;
+}
+
+.treeItemMain,
+.projectMain {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	background: none;
+	border: none;
+	color: inherit;
+	padding: 2px 8px;
+	text-align: left;
+	cursor: pointer;
+	overflow: hidden;
+}
+
+.itemActions,
+.projectActions {
+	display: none;
+	gap: 2px;
+	padding-right: 4px;
+}
+
+.treeItem:hover .itemActions,
+.projectItem:hover .projectActions {
+	display: flex;
+}
+
+.treeItem:hover,
+.projectItem:hover {
+	background-color: #2a2d2e;
+}
+
+.activeFile,
+.activeProject {
+	background-color: rgba(184, 107, 248, 0.15);
+	color: #ffffff;
+	border-left: 2px solid #b86bf8;
+}
+
+.projectMain {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	background: none;
+	border: none;
+	color: inherit;
+	padding: 2px 12px;
+	text-align: left;
+	cursor: pointer;
+}
+
+.projectActions {
+	display: none;
+	gap: 2px;
+}
+
+.projectItem:hover .projectActions {
+	display: flex;
+}
+
+.renameForm {
+	flex: 1;
+	padding: 0 4px;
+}
+
+.renameInput {
+	width: 100%;
+	background-color: #3c3c3c;
+	border: 1px solid #b86bf8;
+	color: #ffffff;
+	font-size: 13px;
+	padding: 1px 4px;
+	outline: none;
+	border-radius: 2px;
+}
+
+.chevron {
+	width: 16px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.chevronSpacer {
+	width: 16px;
+}
+
+.fileIcon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 16px;
+}
+
+.fileName {
+	flex: 1;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-left: 8px;
+}
+
+.emptyMsg {
+	padding: 10px 20px;
+	font-size: 12px;
+	color: #888888;
+	font-style: italic;
+}
+
+.resultsView {
+	flex: 1;
+	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.resultsCount {
+	padding: 8px 12px;
+	font-size: 11px;
+	color: #888888;
+	border-bottom: 1px solid #333333;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.searchResults {
+	display: flex;
+	flex-direction: column;
+}
+
+.searchResultItem {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	padding: 8px 12px;
+	background: none;
+	border: none;
+	border-bottom: 1px solid #333333;
+	color: #cccccc;
+	cursor: pointer;
+	text-align: left;
+	transition: background-color 0.1s;
+}
+
+.searchResultItem:hover {
+	background-color: #2a2d2e;
+}
+
+.resultHeader {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 4px;
+}
+
+.resultFile {
+	font-size: 12px;
+	font-weight: 600;
+	color: #b86bf8;
+}
+
+.resultProject {
+	font-size: 9px;
+	color: #888888;
+	background-color: #333333;
+	padding: 1px 4px;
+	border-radius: 2px;
+	text-transform: uppercase;
+}
+
+.resultContent {
+	display: flex;
+	gap: 6px;
+	font-size: 11px;
+	font-family: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
+	overflow: hidden;
+}
+
+.resultLine {
+	color: #858585;
+	min-width: 24px;
+}
+
+.resultText {
+	color: #dcdcdc;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.imagePreviewPopup {
+	position: fixed;
+	z-index: 1000;
+	background-color: #252526;
+	border: 1px solid #454545;
+	border-radius: 4px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+	padding: 4px;
+	pointer-events: none;
+	max-width: 200px;
+}
+
+.imagePreviewPopup img {
+	width: 100%;
+	height: auto;
+	border-radius: 2px;
+}
+
+.previewPath {
+	font-size: 10px;
+	color: #888888;
+	text-align: center;
+	margin-top: 4px;
+}
+
+.sidebarResizer {
+	position: absolute;
+	right: -2px;
+	top: 0;
+	width: 4px;
+	height: 100%;
+	cursor: col-resize;
+	z-index: 100;
+}
+
+.sidebarResizer:hover,
+.resizing {
+	background-color: #b86bf8;
+}
+
+.contextMenu {
+	position: fixed;
+	background-color: #252526;
+	border: 1px solid #454545;
+	border-radius: 4px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+	padding: 4px 0;
+	z-index: 2000;
+	min-width: 160px;
+}
+
+.contextMenu button {
+	width: 100%;
+	padding: 6px 12px;
+	background: none;
+	border: none;
+	color: #cccccc;
+	text-align: left;
+	font-size: 12px;
+	cursor: pointer;
+	display: block;
+}
+
+.contextMenu button:hover {
+	background-color: #b86bf8;
+	color: #ffffff;
+}
+
+.menuSeparator {
+	height: 1px;
+	background-color: #454545;
+	margin: 4px 8px;
+}
+
+.dragOver {
+	background-color: rgba(184, 107, 248, 0.15);
+	outline: 2px solid #b86bf8;
+	outline-offset: -2px;
+}
+
+/* --- Models Tab Ultra-Compact Pro Style --- */
+.modelsView {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	color: #cccccc;
+}
+
+.modelList {
+	overflow-y: auto;
+	flex: 1;
+}
+
+.masterToggleArea {
+	padding: 10px 14px;
+	border-bottom: 1px solid var(--vscode-border);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.masterLabel {
+	font-size: 11px;
+	font-weight: 700;
+	color: #999;
+	letter-spacing: 0.5px;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+/* Custom Purple Switch */
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 32px;
+	height: 18px;
+}
+
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #3e3e3e;
+	transition: 0.2s;
+	border-radius: 18px;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 14px;
+	width: 14px;
+	left: 2px;
+	bottom: 2px;
+	background-color: white;
+	transition: 0.2s;
+	border-radius: 50%;
+}
+
+.switch input:checked + .slider {
+	background-color: #b86bf8;
+}
+
+.switch input:checked + .slider:before {
+	transform: translateX(14px);
+}
+
+.deltaPlaneContent {
+	display: flex;
+	flex-direction: column;
+}
+
+.modelGroup {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.groupLabel {
+	display: flex;
+	align-items: center;
+	padding: 10px 14px 4px 14px;
+	font-size: 10px;
+	font-weight: 700;
+	color: #555;
+	text-transform: uppercase;
+}
+
+.subToggle,
+.modelBtn {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	width: 100%;
+	padding: 4px 14px;
+	border: none;
+	background: transparent;
+	color: #aaa;
+	font-size: 11px;
+	text-align: left;
+	cursor: pointer;
+	transition:
+		background 0.1s,
+		color 0.1s;
+}
+
+.subToggle:hover,
+.modelBtn:hover {
+	background: var(--vscode-hover);
+	color: #e1e1e1;
+}
+
+.subToggle svg,
+.modelBtn svg {
+	opacity: 0.6;
+}
+
+.subToggle:hover svg,
+.modelBtn:hover svg {
+	opacity: 1;
+}
+
+.configBox {
+	padding: 6px 0 10px 30px;
+	background: rgba(0, 0, 0, 0.1);
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.checkboxLabel {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 11px;
+	color: #888;
+	cursor: pointer;
+	padding: 2px 0;
+}
+
+.checkboxLabel:hover {
+	color: #ccc;
+}
+
+.checkboxLabel input {
+	margin: 0;
+	width: 12px;
+	height: 12px;
+	accent-color: #b86bf8;
+}
+
+.sigRow {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	padding: 6px;
+	background: rgba(255, 255, 255, 0.02);
+	border: 1px solid rgba(255, 255, 255, 0.05);
+	border-radius: 2px;
+	position: relative;
+	margin: 4px 14px 4px 0;
+}
+
+.sigRow input {
+	font-size: 10px;
+	padding: 3px 5px;
+	background: #1e1e1e;
+	border: 1px solid #333;
+	color: #ccc;
+	width: 100%;
+}
+
+.sigRow input:focus {
+	border-color: #b86bf8;
+	outline: none;
+}
+
+.miniBtn {
+	position: absolute;
+	top: 2px;
+	right: 2px;
+	background: transparent;
+	border: none;
+	color: #555;
+	padding: 2px;
+	cursor: pointer;
+	opacity: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.sigRow:hover .miniBtn {
+	opacity: 1;
+}
+
+.miniBtn:hover {
+	color: #f44;
+}
+
+.addBtn,
+.insertBtn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 4px;
+	padding: 4px 8px;
+	font-size: 10px;
+	border-radius: 2px;
+	cursor: pointer;
+}
+
+.addBtn {
+	background: transparent;
+	color: #888;
+	border: 1px solid #444;
+}
+
+.addBtn:hover {
+	background: #333;
+	color: #ccc;
+}
+
+.insertBtn {
+	background: #b86bf8;
+	border: 1px solid #b86bf8;
+	color: #0d1f2d;
+	font-weight: 600;
+	margin-top: 8px;
+}
+
+.insertBtn:hover {
+	background: #c98eff;
+	border-color: #c98eff;
+}

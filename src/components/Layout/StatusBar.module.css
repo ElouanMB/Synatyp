@@ -1,0 +1,88 @@
+.statusBar {
+	height: 24px;
+	background-color: var(--bg-secondary);
+	border-top: 1px solid var(--border-color);
+	display: flex;
+	align-items: center;
+	padding: 0 12px;
+	font-size: 10px;
+	color: var(--text-secondary);
+	user-select: none;
+}
+
+.left,
+.right {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}
+
+.center {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	background: none;
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	cursor: pointer;
+	padding: 0;
+}
+
+.center:hover {
+	background-color: rgba(255, 255, 255, 0.05);
+}
+
+.item {
+	display: flex;
+	align-items: center;
+}
+
+.spinner {
+	display: inline-block;
+	animation: spin 1s linear infinite;
+	color: var(--accent);
+	font-size: 12px;
+	margin-left: 8px;
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.errorText {
+	color: var(--error);
+}
+
+.successText {
+	color: var(--success);
+}
+
+.statusBtn {
+	background: none;
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	cursor: pointer;
+	padding: 0 4px;
+	border-radius: 2px;
+	display: flex;
+	align-items: center;
+	color: inherit;
+}
+
+.statusBtn:hover {
+	background-color: rgba(255, 255, 255, 0.05);
+}
+
+.divider {
+	width: 1px;
+	height: 12px;
+	background-color: var(--border-color);
+	margin: 0 4px;
+}

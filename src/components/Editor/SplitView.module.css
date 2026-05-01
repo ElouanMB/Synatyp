@@ -1,0 +1,37 @@
+.splitView {
+	flex: 1;
+	display: flex;
+	min-height: 0;
+	overflow: hidden;
+}
+
+.editorPane {
+	flex: 1.2; /* Slightly more space for code by default */
+	height: 100%;
+	min-height: 0;
+	min-width: 0; /* Prevents long lines from pushing the renderer */
+	display: flex;
+	flex-direction: column;
+}
+
+.editorPane.hidden {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	overflow: hidden;
+	z-index: -1;
+	pointer-events: none;
+}
+
+.rendererPane {
+	flex: 1;
+	height: 100%;
+	min-height: 0; /* Crucial for scrolling children */
+	min-width: 450px; /* Ensures the document stays visible */
+	display: flex;
+	flex-direction: column;
+	overflow: hidden; /* Canvas will handle internal scrolling */
+}

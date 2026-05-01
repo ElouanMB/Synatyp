@@ -1,0 +1,87 @@
+.terminalContainer {
+	height: 200px;
+	background-color: #403e41;
+	border-top: 1px solid #333;
+	display: flex;
+	flex-direction: column;
+	color: #cccccc;
+	font-family: "JetBrains Mono", "Fira Code", "Courier New", monospace;
+	font-size: 13px;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 4px 12px;
+	background-color: #221f22;
+	border-bottom: 1px solid #333;
+	user-select: none;
+}
+
+.title {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	text-transform: uppercase;
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.5px;
+	color: #999;
+}
+
+.errorCount {
+	background-color: #f14c4c;
+	color: white;
+	padding: 1px 6px;
+	border-radius: 10px;
+	font-size: 10px;
+}
+
+.closeButton {
+	background: none;
+	border: none;
+	color: #999;
+	cursor: pointer;
+	font-size: 18px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 4px;
+}
+
+.closeButton:hover {
+	color: white;
+}
+
+.content {
+	flex: 1;
+	overflow-y: auto;
+	padding: 8px 12px;
+}
+
+.empty {
+	color: #6a9955;
+	font-style: italic;
+}
+
+.errorItem {
+	margin-bottom: 4px;
+	line-height: 1.5;
+}
+
+.errorPrefix {
+	color: #f14c4c;
+	margin-right: 8px;
+	font-weight: bold;
+}
+
+.location {
+	color: #4fc1ff;
+	margin-right: 8px;
+}
+
+.message {
+	color: #d4d4d4;
+	white-space: pre-wrap;
+}

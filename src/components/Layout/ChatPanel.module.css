@@ -1,0 +1,333 @@
+.container {
+	width: 320px;
+	height: 100%;
+	background-color: #1e1e1e;
+	border-left: 1px solid #333333;
+	display: flex;
+	flex-direction: column;
+	z-index: 100;
+	color: #cccccc;
+	font-family:
+		-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+		sans-serif;
+}
+
+.header {
+	height: 35px;
+	padding: 0 16px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #252526;
+	border-bottom: 1px solid #333333;
+}
+
+.title {
+	font-size: 11px;
+	font-weight: 700;
+	color: #bbbbbb;
+	letter-spacing: 0.5px;
+}
+
+.headerActions {
+	display: flex;
+	gap: 4px;
+}
+
+.actionBtn {
+	background: none;
+	border: none;
+	color: #cccccc;
+	cursor: pointer;
+	width: 24px;
+	height: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 4px;
+	transition: all 0.2s;
+}
+
+.actionBtn:hover {
+	background-color: #454545;
+	color: #ffffff;
+}
+
+.messageList {
+	flex: 1;
+	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+	padding: 16px 0;
+}
+
+.emptyState {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 40px 20px;
+	text-align: center;
+	color: #888888;
+	gap: 16px;
+}
+
+.emptyTitle {
+	margin: 0;
+	font-size: 14px;
+	font-weight: 600;
+	color: #e1e1e1;
+}
+
+.emptyState p {
+	font-size: 12px;
+	line-height: 1.5;
+	margin: 0;
+}
+
+.suggestions {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	width: 100%;
+	margin-top: 8px;
+}
+
+.suggestionBtn {
+	background-color: #2a2d2e;
+	border: 1px solid #3c3c3c;
+	color: #aaaaaa;
+	padding: 8px 12px;
+	border-radius: 4px;
+	font-size: 11px;
+	text-align: left;
+	cursor: pointer;
+	transition: all 0.2s;
+	width: 100%;
+}
+
+.suggestionBtn:hover {
+	background-color: #37373d;
+	color: #ffffff;
+	border-color: #b86bf8;
+}
+
+.message {
+	padding: 12px 16px;
+	display: flex;
+	gap: 12px;
+	transition: background-color 0.1s;
+}
+
+.message:hover {
+	background-color: #2a2d2e;
+}
+
+.user {
+	background-color: rgba(255, 255, 255, 0.02);
+}
+
+.avatar {
+	width: 24px;
+	height: 24px;
+	border-radius: 4px;
+	background-color: #333333;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 10px;
+	font-weight: 700;
+	flex-shrink: 0;
+}
+
+.assistant .avatar {
+	background-color: rgba(184, 107, 248, 0.2);
+	color: #b86bf8;
+}
+
+.messageContent {
+	font-size: 13px;
+	line-height: 1.5;
+	color: #cccccc;
+	word-break: break-word;
+}
+
+.thinking {
+	display: flex;
+	gap: 4px;
+	height: 20px;
+	align-items: center;
+}
+
+.thinking span {
+	width: 4px;
+	height: 4px;
+	background-color: #b86bf8;
+	border-radius: 50%;
+	animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.thinking span:nth-child(1) {
+	animation-delay: -0.32s;
+}
+.thinking span:nth-child(2) {
+	animation-delay: -0.16s;
+}
+
+@keyframes bounce {
+	0%,
+	80%,
+	100% {
+		transform: scale(0);
+	}
+	40% {
+		transform: scale(1);
+	}
+}
+
+.inputArea {
+	padding: 16px;
+	background-color: #1e1e1e;
+	border-top: 1px solid #333333;
+}
+
+.error {
+	background-color: rgba(248, 107, 107, 0.1);
+	color: #f86b6b;
+	padding: 8px 12px;
+	border-radius: 4px;
+	font-size: 12px;
+	margin-bottom: 12px;
+	border: 1px solid rgba(248, 107, 107, 0.2);
+}
+
+.inputWrapper {
+	position: relative;
+	background-color: #3c3c3c;
+	border: 1px solid #3c3c3c;
+	border-radius: 2px;
+	display: flex;
+	flex-direction: column;
+}
+
+.inputWrapper:focus-within {
+	border-color: #b86bf8;
+}
+
+.textarea {
+	background: transparent;
+	border: none;
+	color: #cccccc;
+	padding: 8px 36px 8px 12px;
+	font-family: inherit;
+	font-size: 13px;
+	resize: none;
+	outline: none;
+	min-height: 60px;
+	max-height: 200px;
+}
+
+.sendButton {
+	position: absolute;
+	right: 8px;
+	bottom: 8px;
+	background: none;
+	border: none;
+	color: #858585;
+	cursor: pointer;
+	padding: 4px;
+	border-radius: 4px;
+	display: flex;
+	transition: all 0.2s;
+}
+
+.sendButton:hover:not(:disabled) {
+	color: #ffffff;
+	background-color: #454545;
+}
+
+.sendButton:disabled {
+	opacity: 0.3;
+	cursor: default;
+}
+
+.inputFooter {
+	margin-top: 8px;
+	font-size: 10px;
+	color: #666666;
+	text-align: right;
+}
+
+/* Unlock View Styles */
+.unlockView {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 40px 24px;
+	text-align: center;
+}
+
+.unlockView h3 {
+	margin: 16px 0 8px 0;
+	font-size: 16px;
+	color: #ffffff;
+}
+
+.unlockView p {
+	font-size: 13px;
+	color: #888888;
+	margin-bottom: 24px;
+	line-height: 1.5;
+}
+
+.unlockInputWrapper {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.vscodeInput {
+	width: 100%;
+	background-color: #3c3c3c;
+	border: 1px solid #3c3c3c;
+	color: #cccccc;
+	padding: 8px 12px;
+	font-size: 13px;
+	border-radius: 2px;
+	outline: none;
+}
+
+.vscodeInput:focus {
+	border-color: #b86bf8;
+}
+
+.unlockBtn {
+	background-color: #b86bf8;
+	color: #ffffff;
+	border: none;
+	padding: 8px 16px;
+	border-radius: 2px;
+	font-size: 13px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background-color 0.2s;
+}
+
+.unlockBtn:hover:not(:disabled) {
+	background-color: #c98eff;
+}
+
+.unlockBtn:disabled {
+	opacity: 0.5;
+	cursor: default;
+}
+
+.unlockError {
+	color: #f86b6b;
+	font-size: 12px;
+	margin-top: -4px;
+	text-align: left;
+}

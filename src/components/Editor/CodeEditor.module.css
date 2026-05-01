@@ -1,0 +1,14 @@
+.editorContainer {
+	flex: 1;
+	height: 100%;
+	overflow: hidden;
+	border-right: 1px solid var(--border-color);
+}
+
+:global(.cm-editor) {
+	height: 100%;
+}
+
+:global(.cm-scroller) {
+	overflow: auto;
+}
